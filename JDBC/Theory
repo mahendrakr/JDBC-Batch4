@@ -1,0 +1,8 @@
+7 Steps of JDBC-
+Step1 : Load the driver class.
+Step2 : Establish the connection .
+Step3 : Prepare the SQL statement.
+Step4 : Create JDBC statement .
+Step5 : Submit the SQL statement to database using JDBC statement.
+Step6 : Process the result .
+Step7 : Close all the resources.
