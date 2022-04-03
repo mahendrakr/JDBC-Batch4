@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Lab1 {
+public class UpdateRecord {
+
 	public static void main(String[] args) {
 		Connection connection =null;
 		Statement createStatement=null;
@@ -16,16 +17,16 @@ public class Lab1 {
 		final String url="jdbc:mysql://localhost:3306/mydb";
 		 connection = DriverManager.getConnection(url,"root","myhandsomepapa@0930");
 //Step3:Prepare the sql statement
-		String sql="delete from college where cid=105";
+		String sql="update college set id=999 where id=103";
 //Step4:Create JDBC statement
 		 createStatement = connection.createStatement();
 //Step5:Submit the sql statement to Database using jdbc statement		
 		int x1 = createStatement.executeUpdate(sql);
 //Step6:Process the result
 		if(x1==1)
-			System.out.println("Record inserted successfully");
+			System.out.println("Record updated successfully");
 		else
-			System.out.println("Record not inserted");
+			System.out.println("Record not updated");
 		}
 		catch(ClassNotFoundException e) {
 			System.out.println("Exception occurs while loading the driver");
@@ -50,8 +51,7 @@ public class Lab1 {
 		}
 		
 		
-		
-		
+
 	}
-  
+
 }
