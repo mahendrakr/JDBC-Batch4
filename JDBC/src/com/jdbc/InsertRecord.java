@@ -9,7 +9,7 @@ public class InsertRecord {
 
 	public static void main(String[] args) {
 		
-		String sql="insert into college values(105,'TIT','Jhansi')";
+		String sql="insert into college values(105,'LNCT','Jabalpur')";
 		Connection con=null;
 		Statement st=null;
 		try {
