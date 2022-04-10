@@ -21,7 +21,7 @@ public class JDBCUtil {
 		Connection con=null;
 		String url="jdbc:mysql://localhost:3306/mydb";
 		String userName="root";
-		String pswd="myhandsomepapa@0930";
+		String pswd="@SAditya0409";
 		try {
 		con = DriverManager.getConnection(url,userName,pswd);
 		} catch(SQLException e) {
