@@ -1,6 +1,7 @@
 # Compiled class file
 *.class
 JDBC/.*
+*.classpath
 
 # Log file
 *.log

@@ -9,7 +9,8 @@ public class DeleteRecord {
 
 	public static void main(String[] args) {
 		
-		String sql="delete from college where id=105";
+		String sql="delete from student where sid=105";
+		
 		Connection con=null;
 		Statement st=null;
 		try {

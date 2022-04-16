@@ -6,3 +6,66 @@ Step4 : Create JDBC statement .
 Step5 : Submit the SQL statement to database using JDBC statement.
 Step6 : Process the result .
 Step7 : Close all the resources.
+
+Diff. b/w Statement and PreparedStatement :
+1. In Statement place holder concept is not available but in PreparedStatement place holder
+	concept is available means you can pass dynamic value
+2. Statement is not secure but PReparedStatement is more secured.
+3. Performance of Statement is poor compared to PreparedStatement.
+
+ResultSet : it is an interface available in java.sql package which contains the record return by select statement.
+suppose object of statement is st :
+ResultSet rs=st.executeQuery(sql_statement);
+Types of ResultSet :
+A. Depending on the ResultSet cursor movement, you can divide the ResultSet into 2 types,
+1. Forward only
+2. Scrollable
+Forward only : when ResultSet is forward only then, 
+* pointer can be moved in the forward direction only.
+* pointer can be moved only once.
+* pointer can be moved in sequential order only.
+* by default ResultSet is forward only
+How can you explicitly define the ResultSet as forward only?
+st = con.createStatement(ResultSet.TYPE_FORWARD_ONLY);
+
+Scrollable : 
+* Pointer can be moved in both forward and backward direction.
+* Pointer can be moved multiple time.
+* Pointer can be moved in random order.
+How can you explicitly define the ResultSet as scrollable?
+st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE);
+
+note: scrollable are of two types TYPE_SCROLL_SENSITIVE, TYPE_SCROLL_INSENSITIVE
+B. Depending on the ResultSet updation, you can divide the ResultSet into two types:
+1-> read only
+2-> updatable ResultSet/Dynamic ResultSet
+READ ONLY : 
+1-- when ResultSet is read only then ypu can just access the data from ResultSet object by galling the getter method
+	and you can not do any updations on the ResultSet object.
+2-- By default ResultSets are Read only.
+How can you explicitly define the ResultSet Read only?
+st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
+Updatable ResultSet : when resultset is updatable, you can do following operation:
+1--Access the data from resultset.
+2--Insert record into the ResultSet,udate the records, delete the records from ResultSet.
+3--When ResultSet is updatable then it must be scrollable.
+How can you explicitly define the ResultSet updatable?
+st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+
+NOTE: ResultSet will not become updatable even when you use ResultSet.CONCUR_UPDATABLE in the following cases:
+1-> when select statement uses joins.
+2-> when select statement uses aggregate function.
+3-> when select statement uses * instead of column names (in oracle,Mysql).
+
+
+
+
+
+
+
+
+
+
+
+
+

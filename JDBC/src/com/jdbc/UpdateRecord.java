@@ -9,7 +9,7 @@ public class UpdateRecord {
 
 	public static void main(String[] args) {
 		
-		String sql="update college set id=999 where id=103";
+		String sql="update student set sid=999 where id=103";
 		Connection con=null;
 		Statement st=null;
 		try {

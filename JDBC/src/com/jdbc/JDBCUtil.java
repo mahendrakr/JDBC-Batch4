@@ -35,6 +35,15 @@ public class JDBCUtil {
 }
 
 	public static void closeResource(Connection con, Statement st) {
+		try {
+			if(con!=null)
+			con.close();
+			if(st!=null)
+			st.close();
+		} catch (SQLException e) {
+			System.out.println("Exception occurs while closing the resources");
+			e.printStackTrace();
+		}
 		
 	}
 }

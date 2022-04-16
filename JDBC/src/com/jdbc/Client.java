@@ -27,6 +27,8 @@ public class Client {
 		stu.setPhno(phno);
 		CURDOperation co=new CURDOperation();
 		co.insertStudent(stu);
+		co.updateStudent(stu);
+		co.deleteStudentById(id);
 		sc.close();
 	}
 
