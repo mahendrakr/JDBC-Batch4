@@ -1,0 +1,42 @@
+Metadata means information.
+DatabaseMetadata 
+It is an Interface available in java.sql package.
+Implementation of DatabaseMetadata(I) is provided by driver vendor 
+It is used to get information about your database.
+
+
+
+ResultSetMetaData
+It is an Interface available in java.sql package.
+Implementation of ResultSetMetaData(I) is provided by driver vendor
+It is used to get information about ResultSet object(table name ,column name,column type etc....)
+
+RowSet
+It is an Interface available in javax.sql package.
+RowSet Interface extends ResultSet interface .
+
+
+Question:ResultSet And RowSet ?
+ResultSet object is used to store records return by select sql statement .
+RowSet object is also used to store records return by select sql statement .
+ResultSet object can be create as below: 
+Connection con = JDBCUtil.getMySQLConnection();
+		Statement st = con.createStatement();
+		String sql="select * from student";
+		ResultSet rs = st.executeQuery(sql);
+RowSet object can be create as below:
+To do 
+By default ResultSet are forward only and read only.
+By default RowSet are scrollable and updatable.
+ResultSet objects are not eligible for serialization.
+RowSet objects are eligible for serialization.
+ResultSet object is connection oriented .
+RowSet is connectionless object.
+
+		
+		
+
+
+
+
+
