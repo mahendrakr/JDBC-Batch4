@@ -33,6 +33,25 @@ RowSet objects are eligible for serialization.
 ResultSet object is connection oriented .
 RowSet is connectionless object.
 
+
+Batch Updates:
+When you multiple queries to database one by one then lot of time will be wasted for request and response
+ex-using statement
+for one sql statement=request time(5 MS) rt + complie time(5MS) + execution time(5MS) + response time (5 MS)=20MS total time.
+for 100 sql statement = 100*20=(2000 MS)
+using update statement 
+for one sql statement = 5 + 0 + 5 + 5 =15MS
+for 100 sql statements = 100*15=1500MS
+
+In the above two cases you are trying to submit 100 sql statements. For submitting 100 sql statements, you need to comunicate database 100
+times. This increases number round trips b/w your application and database. Which damage the application performance.
+
+Batch updates allow you to submit multiple sql statements to the database at a time
+For 100 sql statements =(5MS+100*5+100*5+5)=1010 MS
+
+Note:
+You can use UID (Update/Insert/Delete) query only. 
+You cann't use select query.
 		
 		
 
